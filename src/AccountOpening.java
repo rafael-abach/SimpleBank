@@ -2,8 +2,8 @@ import java.util.HashMap;
 
 public class AccountOpening {
 	
-	private String documentNumber;
 	private String name;
+	private String documentNumber;
 	private String birthdate;
 	private HashMap<?, ?> address;
 	private double income;
@@ -36,10 +36,11 @@ public class AccountOpening {
 	//	this.addressComplement = addressComplement;
 	
 	
-	public AccountOpening(String documentNumber, String name, String birthdate, HashMap<?, ?> address, double income, String password) {
+	public AccountOpening(String name, String documentNumber, 
+			String birthdate, HashMap<?, ?> address, double income, String password) {
 		
-		this.documentNumber = documentNumber;
 		this.name = name;
+		this.documentNumber = documentNumber;
 		this.birthdate = birthdate;
 		this.address = address;
 		this.income = income;
@@ -47,12 +48,12 @@ public class AccountOpening {
 		
 	}
 	
-	public String getdocumentNumber() {
-		return this.documentNumber;
-	}
-	
 	public String getname() {
 		return this.name;
+	}
+	
+	public String getdocumentNumber() {
+		return this.documentNumber;
 	}
 	
 	public String getBirthdate() {

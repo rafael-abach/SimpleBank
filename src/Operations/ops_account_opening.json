@@ -1,8 +1,7 @@
 [	
 	{     
-            "type": "account_opening",
-            "documentNumber": "47118593101",
             "name": "Rafael",
+            "documentNumber": "47118593101",
             "birthdate": "2000-01-01",
             "address": {
                   "country": "Brasil",
@@ -17,9 +16,8 @@
             "password": "000000"
 	},
 	{     
-            "type": "account_opening",
+            "name":"Gabriel",            
             "documentNumber":"32118593101",
-            "name":"Gabriel",
             "birthdate": "2000-01-01",
             "address": {
                   "country": "Brasil",
@@ -34,9 +32,8 @@
             "password": "000000"
 	},
 	{     
-            "type": "account_opening",
+            "name":"Juliana",            
             "documentNumber":"34118555101",
-            "name":"Juliana",
             "birthdate": "2000-01-01",
             "address": {
                   "country": "Brasil",
