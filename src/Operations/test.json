@@ -1,0 +1,56 @@
+{
+    "type": "account_opening",
+    "data": 
+          [	
+                {     
+                      "name": "Rafael",
+                      "documentNumber": "47118593101",
+                      "birthdate": "2000-01-01",
+                      "address": {
+                            "country": "Brasil",
+                            "state": "São Paulo",
+                            "city": "São Paulo",
+                            "postalCode": "04085550",
+                            "address": "Visconde",
+                            "addressNumber": 101,
+                            "addressComplement": "Apto 131"
+                      },
+                      "income": 1000,
+                      "password": "000000"
+                },
+
+                {     
+                      "name":"Gabriel",
+                      "documentNumber":"32118593101",
+                      "birthdate": "2000-01-01",
+                      "address": {
+                            "country": "Brasil",
+                            "state": "Rio Grande do Sul",
+                            "city": "Porto Alegre",
+                            "postalCode": "04085550",
+                            "address": "Faria Lima",
+                            "addressNumber": 2031,
+                            "addressComplement": ""
+                      },
+                      "income": 5000,
+                      "password": "000000"
+                },
+
+                {     
+                      "name":"Juliana",
+                      "documentNumber":"34118555101",
+                      "birthdate": "2000-01-01",
+                      "address": {
+                            "country": "Brasil",
+                            "state": "Bahia",
+                            "city": "Salvador",
+                            "postalCode": "04085550",
+                            "address": "Praça da Sé",
+                            "addressNumber": 1,
+                            "addressComplement": ""
+                      },
+                      "income": 10000,
+                      "password": "000000"
+                }
+          ]
+}
