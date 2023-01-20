@@ -1,0 +1,109 @@
+[  
+    {
+        "type": "onboarding",
+        "details": {
+            "name": "Gabriel",
+            "documentNumber": "32118593101",
+            "birthdate": "2000-01-01",
+            "country": "Brasil",
+            "state": "Rio Grande do Sul",
+            "city": "Porto Alegre",
+            "postalCode": "04085550",
+            "address": "Faria Lima",
+            "addressNumber": 2031,
+            "addressComplement": "",
+            "income": 5000,
+            "password": "000000",
+            "onboardingDate": "2022-01-03",
+            "onboardingTimestamp": "2022-01-03 09:10:00"
+        }
+    },
+
+    {
+        "type": "onboarding",
+        "details": {
+            "name": "Juliana",
+            "documentNumber": "34118555101",
+            "birthdate": "2000-01-01",
+            "country": "Brasil",
+            "state": "Bahia",
+            "city": "Salvador",
+            "postalCode": "04085550",
+            "address": "Praça da Sé",
+            "addressNumber": 1,
+            "addressComplement": "",
+            "income": 10000,
+            "password": "000000",
+            "onboardingDate": "2022-05-11",
+            "onboardingTimestamp": "2022-05-11 11:23:33"
+        }
+   },
+
+   {
+        "type": "onboarding",
+        "details": {
+            "name": "Rafael",
+            "documentNumber": "47118593101",
+            "birthdate": "2000-01-01",
+            "country": "Brasil",
+            "state": "São Paulo",
+            "city": "São Paulo",
+            "postalCode": "04085550",
+            "address": "Visconde",
+            "addressNumber": 101,
+            "addressComplement": "Apto 131",
+            "income": 1000,
+            "password": "000000",
+            "onboardingDate": "2023-01-11",
+            "onboardingTimestamp": "2023-01-11 14:27:01"
+        }
+    },
+
+    {
+        "type": "cashout",
+        "details": {
+            "originDocumentNumber": "47118593101",
+            "destinyDocumentNumber": "98718593321",
+            "transactionValue": 15.5,
+            "transactionDate": "2023-01-01",
+            "transactionTimestamp": "2023-01-01 14:03:10",
+            "originBankID": "000",
+            "destinyBankID": "000"
+        }
+   },
+
+   {
+        "type": "cashout",
+        "details": {
+            "originDocumentNumber": "32118593101",
+            "destinyDocumentNumber": "32118593101",
+            "transactionValue": 50,
+            "transactionDate": "2023-01-01",
+            "transactionTimestamp": "2023-01-01 14:03:10",
+            "originBankID": "000",
+            "destinyBankID": "260"
+        }
+   },
+
+   {
+        "type": "cashin",
+        "details": {
+            "originDocumentNumber": "98718593321",
+            "destinyDocumentNumber": "34118555101",
+            "transactionValue": 250,
+            "transactionDate": "2023-01-01",
+            "transactionTimestamp": "2023-01-01 14:03:10",
+            "originBankID": "341",
+            "destinyBankID": "000"
+        }
+   },
+
+   {
+        "type": "closing",
+        "details": {
+            "documentNumber": "32118593101",
+            "password": "000000"
+        }
+
+   }
+]
