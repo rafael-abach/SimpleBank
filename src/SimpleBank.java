@@ -1,7 +1,3 @@
-//package Operations;
-
-// import java.io.File; the import is never used
-
 import java.io.FileReader;
 
 import java.io.IOException;
@@ -14,27 +10,60 @@ import java.util.HashMap;
 
 public class SimpleBank {
 
+	static HashMap<?, ?> operationDetails;
+	
+	public static Onboarding createOnboarding() {
+		Onboarding newOnb = new Onboarding((String) operationDetails.get("name"), 
+										   (String) operationDetails.get("documentNumber"), 
+										   (String) operationDetails.get("birthdate"), 
+										   (String) operationDetails.get("country"), 
+										   (String) operationDetails.get("city"), 
+										   (String) operationDetails.get("postalCode"), 
+										   (String) operationDetails.get("address"), 
+										   (Double) operationDetails.get("addressNumber"), 
+										   (String) operationDetails.get("addressComplement"), 
+										   (Double) operationDetails.get("income"), 
+										   (String) operationDetails.get("password"), 
+										   (String) operationDetails.get("onboardingDate"), 
+										   (String) operationDetails.get("onboardingTimestamp"));
+		
+		System.out.println("Client " + operationDetails.get("name") + " Successfully Created.");
+		System.out.println(operationDetails);
+		
+		return newOnb;
+	}
+	
+	public static AccountClosing createAccountClosing() {
+		
+		return null;
+	}
+	
+	public static Transaction createTransaction() {
+		
+		return null;
+	}
+	
 	public static void main(String[] args) {
-		// System.out.println("Working Directory = " + System.getProperty("user.dir") + "\n");
+		System.out.println("Working Directory = " + System.getProperty("user.dir") + "\n");
 		
 		try {			
 			Gson gson = new Gson();
 			
 			JsonReader opsReader = new JsonReader(new FileReader("./src/Operations/operations.json"));
-			Operations[] operations = gson.fromJson(opsReader, Operations[].class);
+			Operation[] operations = gson.fromJson(opsReader, Operation[].class);
 			
 			for (int i = 0; i < operations.length; i++) {
-				System.out.println("Type of Operation: " + operations[i].getType().toUpperCase());
+				operationDetails = operations[i].getDetails();
 				
-				// operations[i].getDetails().forEach((k,v) -> System.out.println(k + ": " + v));
-				for (HashMap.Entry<?, ?> data : operations[i].getDetails().entrySet()) {
-		            System.out.println(data.getKey() + ": " + data.getValue());
-				}
+				if (operations[i].getType().equals("onboarding")) createOnboarding();
+				if (operations[i].getType().equals("closing")) createAccountClosing();
+				if (operations[i].getType().equals("cashin") || operations[i].getType().equals("cashout")) createTransaction();
 				
-				// if (type == "onboarding") { ... }
-				// if (type == "cashin") { ... }
-				// if (type == "cashout") { ... }
-				// if (type == "closing") { ... }
+				// System.out.println("Type of Operation: " + operations[i].getType().toUpperCase());
+				
+				//for (HashMap.Entry<?, ?> data : operations[i].getDetails().entrySet()) {
+				//	System.out.println(data.getKey() + ": " + data.getValue());
+				//}
 				
 				System.out.println();
 			}

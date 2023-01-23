@@ -1,11 +1,11 @@
 import java.util.HashMap;
 
-public class Operations {
+public class Operation {
 	
 	private String type;
 	private HashMap<?, ?> details;
 	
-	public Operations(String type, HashMap<?, ?> details) {
+	public Operation(String type, HashMap<?, ?> details) {
 		this.type = type;
 		this.details = details;
 	}
