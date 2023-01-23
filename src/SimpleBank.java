@@ -24,11 +24,31 @@ public class SimpleBank {
 			Operations[] operations = gson.fromJson(reader, Operations[].class);
 			
 			for(int i = 0; i < operations.length; i++) {
-				System.out.println(operations[i].getType().toUpperCase());
+//				System.out.println(operations[i].getType().toUpperCase());
 				
-				for (HashMap.Entry<?, ?> data : operations[i].getDetails().entrySet()) {
-		            System.out.println(data.getKey() + ": " + data.getValue());
+//				for (HashMap.Entry<?, ?> data : operations[i].getDetails().entrySet()) {
+//		            System.out.println(data.getKey() + ": " + data.getValue());
+//				}
+				
+				if(operations[i].getType().equals("onboarding")) {
+					AccountOpening accountOpening = new AccountOpening((String) operations[i].getDetails().get("name"), 
+							(String) operations[i].getDetails().get("documentNumber"), 
+							(String) operations[i].getDetails().get("birthdate"), 
+							(String) operations[i].getDetails().get("country"), 
+							(String) operations[i].getDetails().get("city"), 
+							(String) operations[i].getDetails().get("postalCode"), 
+							(String) operations[i].getDetails().get("address"), 
+							(Double) operations[i].getDetails().get("addressNumber"), 
+							(String) operations[i].getDetails().get("addressComplement"), 
+							(Double) operations[i].getDetails().get("income"), 
+							(String) operations[i].getDetails().get("password"), 
+							(String) operations[i].getDetails().get("onboardingDate"), 
+							(String) operations[i].getDetails().get("onboardingTimestamp"));
+					
+					System.out.println("Client " + accountOpening.getName() + " Successfully Created.");
+					System.out.println(operations[i].getDetails());
 				}
+	
 				System.out.println();
 			}
 			
