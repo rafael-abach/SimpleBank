@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 public class SimpleBank {
 
+	static String operationType;
 	static HashMap<?, ?> operationDetails;
 	
 	public static Onboarding createOnboarding() {
@@ -27,20 +28,33 @@ public class SimpleBank {
 										   (String) operationDetails.get("onboardingDate"), 
 										   (String) operationDetails.get("onboardingTimestamp"));
 		
-		System.out.println("Client " + operationDetails.get("name") + " Successfully Created.");
-		System.out.println(operationDetails);
+		System.out.println("Onboarding for " + newOnb.getName() + " Successfully Created.");
 		
 		return newOnb;
 	}
 	
 	public static AccountClosing createAccountClosing() {
+		AccountClosing newClose = new AccountClosing((String) operationDetails.get("documentNumber"), 
+													 (String) operationDetails.get("password"));
 		
-		return null;
+		System.out.println("Account " + newClose.getDocumentNumber() + " Successfully Closed.");
+		
+		return newClose;
 	}
 	
-	public static Transaction createTransaction() {
+	public static Transaction createTransaction(String type) {
+		Transaction newTrans = new Transaction((String) type,
+											   (String) operationDetails.get("originDocumentNumber"), 
+											   (String) operationDetails.get("destinyDocumentNumber"), 
+											   (Double) operationDetails.get("transactionValue"), 
+											   (String) operationDetails.get("transactionDate"), 
+											   (String) operationDetails.get("transactionTimestamp"), 
+											   (String) operationDetails.get("originBankID"), 
+											   (String) operationDetails.get("destinyBankID"));
 		
-		return null;
+		System.out.println(newTrans.getType().toUpperCase() + " Transaction " + "($ " + newTrans.getTransactionValue() + ") Successfully Processed." );
+		
+		return newTrans;
 	}
 	
 	public static void main(String[] args) {
@@ -53,18 +67,14 @@ public class SimpleBank {
 			Operation[] operations = gson.fromJson(opsReader, Operation[].class);
 			
 			for (int i = 0; i < operations.length; i++) {
+				operationType = operations[i].getType();
 				operationDetails = operations[i].getDetails();
 				
-				if (operations[i].getType().equals("onboarding")) createOnboarding();
-				if (operations[i].getType().equals("closing")) createAccountClosing();
-				if (operations[i].getType().equals("cashin") || operations[i].getType().equals("cashout")) createTransaction();
+				if (operationType.equals("onboarding")) createOnboarding();
+				if (operationType.equals("closing")) createAccountClosing();
+				if (operationType.equals("cashin") || operationType.equals("cashout")) createTransaction(operationType);
 				
-				// System.out.println("Type of Operation: " + operations[i].getType().toUpperCase());
-				
-				//for (HashMap.Entry<?, ?> data : operations[i].getDetails().entrySet()) {
-				//	System.out.println(data.getKey() + ": " + data.getValue());
-				//}
-				
+				System.out.println(operationDetails);
 				System.out.println();
 			}
 			
