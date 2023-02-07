@@ -48,6 +48,11 @@ public class SimpleBank {
 					System.out.println("Client " + accountOpening.getName() + " Successfully Created.");
 					System.out.println(operations[i].getDetails());
 				}
+				
+				if(operations[i].getType().equals("closing")) {
+					AccountClosing accountClosing = new AccountClosing((String) operations[i].getDetails().get("documentNumber"), (String) operations[i].getDetails().get("password"));
+					System.out.println("Account " + accountClosing.getDocumentNumber() + " closed");
+				}
 	
 				System.out.println();
 			}
